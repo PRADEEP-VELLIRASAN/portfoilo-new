@@ -246,47 +246,7 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
         )}
       </AnimatePresence>
 
-      {/* Mobile Bottom Navigation - improved clarity and spacing */}
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        className="fixed bottom-0 left-0 right-0 lg:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-200/50 dark:border-gray-700/50 shadow-2xl z-40"
-      >
-        <div className="flex items-center justify-around py-3 px-2">
-          {navItems.slice(0, 5).map((item) => {
-            const isActive = activeSection === item.href.substring(1)
-            return (
-              <motion.button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                whileTap={{ scale: 0.92 }}
-                className={`relative flex flex-col items-center p-2 rounded-xl transition-all duration-200 min-w-0 flex-1 font-semibold text-xs ${
-                  isActive ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20" : "text-gray-500 dark:text-gray-400"
-                }`}
-              >
-                {isActive && (
-                  <motion.div
-                    layoutId="mobileActiveSection"
-                    className="absolute inset-0 bg-blue-100 dark:bg-blue-900/30 rounded-xl"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10 truncate w-full text-center">
-                  {item.name === "Achievements" ? "Awards" : item.name === "Education" ? "Edu" : item.name}
-                </span>
-                {isActive && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="w-1 h-1 bg-blue-500 rounded-full mt-1"
-                  />
-                )}
-              </motion.button>
-            )
-          })}
-        </div>
-      </motion.div>
+      // ...existing code...
     </>
   )
 }
