@@ -177,53 +177,65 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden"
               onClick={() => setIsMenuOpen(false)}
             />
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu - Full width, slide-in from right */}
             <motion.div
               id="mobile-nav"
-              initial={{ opacity: 0, y: -20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="fixed top-14 sm:top-16 left-4 right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 lg:hidden overflow-hidden"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              className="fixed top-0 right-0 bottom-0 left-0 bg-white dark:bg-gray-900 z-50 lg:hidden overflow-y-auto shadow-2xl"
             >
-              <div className="py-4">
-                {navItems.map((item, index) => (
-                  <motion.button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href)}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    whileHover={{ x: 5 }}
-                    whileTap={{ scale: 0.98 }}
-                    className={`flex items-center justify-between w-full text-left px-6 py-4 transition-all duration-200 ${
-                      activeSection === item.href.substring(1)
-                        ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-r-4 border-blue-500"
-                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
-                    }`}
+              <div className="flex flex-col h-full">
+                <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
+                    <Code2 className="w-6 h-6 text-blue-600" />
+                    <span>Angeshkumar</span>
+                  </div>
+                  <button
+                    onClick={() => setIsMenuOpen(false)}
+                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
                   >
-                    <span className="font-medium text-base">{item.name}</span>
-                    {activeSection === item.href.substring(1) && (
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        className="w-2 h-2 bg-blue-500 rounded-full"
-                      />
-                    )}
-                  </motion.button>
-                ))}
-
-                {/* Mobile Connect Button */}
-                <div className="px-6 pt-4 border-t border-gray-200 dark:border-gray-700 mt-2">
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="flex-1 flex flex-col justify-center gap-2 px-6 py-8">
+                  {navItems.map((item, index) => (
+                    <motion.button
+                      key={item.name}
+                      onClick={() => scrollToSection(item.href)}
+                      initial={{ opacity: 0, x: 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.07 }}
+                      whileHover={{ scale: 1.04, backgroundColor: '#e0e7ff' }}
+                      whileTap={{ scale: 0.97 }}
+                      className={`w-full flex items-center justify-between text-left px-6 py-4 rounded-xl text-base font-semibold transition-all duration-200 ${
+                        activeSection === item.href.substring(1)
+                          ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 shadow"
+                          : "text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800"
+                      }`}
+                    >
+                      <span>{item.name}</span>
+                      {activeSection === item.href.substring(1) && (
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          className="w-2 h-2 bg-blue-500 rounded-full"
+                        />
+                      )}
+                    </motion.button>
+                  ))}
+                </div>
+                <div className="px-6 pb-8">
                   <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.97 }}
                     onClick={() => scrollToSection("#contact")}
-                    className="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium transition-all duration-200 flex items-center justify-center space-x-2"
+                    className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
                   >
                     <span>Let's Connect</span>
                   </motion.button>
@@ -234,33 +246,33 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
         )}
       </AnimatePresence>
 
-      {/* Mobile Bottom Navigation */}
+      {/* Mobile Bottom Navigation - improved clarity and spacing */}
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="fixed bottom-4 left-4 right-4 lg:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg z-40"
+        className="fixed bottom-0 left-0 right-0 lg:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-200/50 dark:border-gray-700/50 shadow-2xl z-40"
       >
-        <div className="flex items-center justify-around py-2 px-2">
+        <div className="flex items-center justify-around py-3 px-2">
           {navItems.slice(0, 5).map((item) => {
             const isActive = activeSection === item.href.substring(1)
             return (
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                whileTap={{ scale: 0.9 }}
-                className={`relative flex flex-col items-center p-2 rounded-xl transition-all duration-200 min-w-0 flex-1 ${
-                  isActive ? "text-blue-600 dark:text-blue-400" : "text-gray-500 dark:text-gray-400"
+                whileTap={{ scale: 0.92 }}
+                className={`relative flex flex-col items-center p-2 rounded-xl transition-all duration-200 min-w-0 flex-1 font-semibold text-xs ${
+                  isActive ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20" : "text-gray-500 dark:text-gray-400"
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="mobileActiveSection"
-                    className="absolute inset-0 bg-blue-50 dark:bg-blue-900/20 rounded-xl"
+                    className="absolute inset-0 bg-blue-100 dark:bg-blue-900/30 rounded-xl"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
-                <span className="relative z-10 text-xs font-medium truncate w-full text-center">
+                <span className="relative z-10 truncate w-full text-center">
                   {item.name === "Achievements" ? "Awards" : item.name === "Education" ? "Edu" : item.name}
                 </span>
                 {isActive && (
