@@ -177,69 +177,75 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
               onClick={() => setIsMenuOpen(false)}
             />
 
-            {/* Mobile Menu - Full width, slide-in from right */}
+            {/* Mobile Menu - Responsive full screen, scrollable */}
             <motion.div
               id="mobile-nav"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="fixed top-0 right-0 bottom-0 left-0 bg-white dark:bg-gray-900 z-50 lg:hidden overflow-y-auto shadow-2xl"
+              className="fixed inset-0 bg-white dark:bg-gray-900 z-50 lg:hidden flex flex-col overflow-y-auto"
             >
-              <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
-                    <Code2 className="w-6 h-6 text-blue-600" />
-                    <span>Angeshkumar</span>
-                  </div>
-                  <button
-                    onClick={() => setIsMenuOpen(false)}
-                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
+              <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200 dark:border-gray-700">
+                <div className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
+                  <Code2 className="w-6 h-6 text-blue-600" />
+                  <span>Angeshkumar</span>
                 </div>
-                <div className="flex-1 flex flex-col justify-center gap-2 px-6 py-8">
-                  {navItems.map((item, index) => (
-                    <motion.button
-                      key={item.name}
-                      onClick={() => scrollToSection(item.href)}
-                      initial={{ opacity: 0, x: 40 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.07 }}
-                      whileHover={{ scale: 1.04, backgroundColor: '#e0e7ff' }}
-                      whileTap={{ scale: 0.97 }}
-                      className={`w-full flex items-center justify-between text-left px-6 py-4 rounded-xl text-base font-semibold transition-all duration-200 ${
-                        activeSection === item.href.substring(1)
-                          ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 shadow"
-                          : "text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800"
-                      }`}
-                    >
-                      <span>{item.name}</span>
-                      {activeSection === item.href.substring(1) && (
-                        <motion.div
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          className="w-2 h-2 bg-blue-500 rounded-full"
-                        />
-                      )}
-                    </motion.button>
-                  ))}
-                </div>
-                <div className="px-6 pb-8">
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              <div className="flex-1 flex flex-col gap-2 px-4 py-6">
+                {navItems.map((item, index) => (
                   <motion.button
-                    whileHover={{ scale: 1.04 }}
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.07 }}
+                    whileHover={{ scale: 1.04, backgroundColor: '#e0e7ff' }}
                     whileTap={{ scale: 0.97 }}
-                    onClick={() => scrollToSection("#contact")}
-                    className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                    className={`w-full flex items-center justify-between text-left px-4 py-4 rounded-xl text-base font-semibold transition-all duration-200 ${
+                      activeSection === item.href.substring(1)
+                        ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 shadow"
+                        : "text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800"
+                    }`}
                   >
-                    <span>Let's Connect</span>
+                    <span
+                      className={
+                        item.name === "Skills"
+                          ? "relative z-10 text-xs sm:text-sm md:text-base font-medium truncate w-full text-center px-2"
+                          : ""
+                      }
+                    >
+                      {item.name}
+                    </span>
+                    {activeSection === item.href.substring(1) && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="w-2 h-2 bg-blue-500 rounded-full"
+                      />
+                    )}
                   </motion.button>
-                </div>
+                ))}
+              </div>
+              <div className="px-4 pb-6">
+                <motion.button
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => scrollToSection("#contact")}
+                  className="w-full px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                >
+                  <span>Let's Connect</span>
+                </motion.button>
               </div>
             </motion.div>
           </>
