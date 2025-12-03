@@ -49,9 +49,6 @@ export default function HeroSection() {
                 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white"
               >
                 Angeshkumar
-                <span className="block mt-2 bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-x pb-2">
-                  P
-                </span>
               </motion.h1>
             </div>
 
@@ -153,7 +150,7 @@ export default function HeroSection() {
               <div className="absolute inset-8 rounded-full overflow-hidden border-2 border-white/10 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm z-10">
                 <Image
                   src="/professional-student-portrait.png"
-                  alt="Angeshkumar P"
+                  alt="Angeshkumar "
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-700"
                   priority

@@ -100,8 +100,8 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
               <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                 <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
-              <span className="hidden xs:block sm:block">Pradeep V</span>
-              <span className="xs:hidden sm:hidden">PV</span>
+              <span className="hidden xs:block sm:block">Angeshkumar P</span>
+              <span className="xs:hidden sm:hidden">AP</span>
             </motion.div>
 
             {/* Desktop Navigation with Dynamic Pill */}
