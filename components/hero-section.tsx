@@ -31,7 +31,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 dark:border-white/10 backdrop-blur-md mb-8 hover:bg-white/10 dark:hover:bg-white/10 transition-colors cursor-default"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 backdrop-blur-md mb-8 hover:bg-gray-300 dark:hover:bg-white/10 transition-colors cursor-default"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -67,7 +67,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-gray-400 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed text-base lg:text-lg"
+              className="text-gray-600 dark:text-gray-400 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed text-base lg:text-lg"
             >
               Crafting digital experiences with code. Specialized in building scalable web applications and exploring the frontiers of AI and IoT.
             </motion.p>
@@ -105,7 +105,7 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.9 }}
-              className="flex items-center justify-center lg:justify-start gap-8 border-t border-white/10 pt-8"
+              className="flex items-center justify-center lg:justify-start gap-8 border-t border-gray-300 dark:border-white/10 pt-8"
             >
               {socialLinks.map((social, index) => (
                 <a
@@ -118,8 +118,8 @@ export default function HeroSection() {
                   <social.icon className="w-6 h-6" />
                 </a>
               ))}
-              <div className="h-8 w-px bg-white/10" />
-              <div className="flex items-center gap-2 text-sm text-gray-400">
+              <div className="h-8 w-px bg-gray-300 dark:bg-white/10" />
+              <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                 <MapPin className="w-4 h-4 text-violet-400" />
                 Tirupur, India
               </div>
