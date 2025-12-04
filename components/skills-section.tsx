@@ -61,7 +61,7 @@ export default function SkillsSection() {
             <Sparkles className="w-4 h-4 text-cyan-400" />
             <span className="text-sm font-medium text-gray-300">My capabilities</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Skills &{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
               Expertise
@@ -90,7 +90,7 @@ export default function SkillsSection() {
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.gradient} flex items-center justify-center`}>
                     <category.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{category.title}</h3>
                 </div>
 
                 <div className="flex flex-wrap gap-3">
@@ -102,9 +102,9 @@ export default function SkillsSection() {
                       transition={{ duration: 0.4, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.05, y: -2 }}
-                      className={`px-5 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-gradient-to-r hover:${category.gradient} hover:border-transparent transition-all duration-300 group/skill`}
+                      className={`px-5 py-3 rounded-full bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 backdrop-blur-sm hover:bg-gradient-to-r hover:${category.gradient} hover:border-transparent transition-all duration-300 group/skill`}
                     >
-                      <span className="text-gray-300 font-medium text-sm group-hover/skill:text-white transition-colors">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium text-sm group-hover/skill:text-white transition-colors">
                         {skill}
                       </span>
                     </motion.div>
@@ -130,7 +130,7 @@ export default function SkillsSection() {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center">
                 <Award className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-white">Certifications & Courses</h3>
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white">Certifications & Courses</h3>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -142,12 +142,12 @@ export default function SkillsSection() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02, x: 4 }}
-                  className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-violet-500/50 transition-all duration-300"
+                  className="flex items-start gap-3 p-4 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-300 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 hover:border-violet-500/50 transition-all duration-300"
                 >
                   <div className="w-6 h-6 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 flex-shrink-0 flex items-center justify-center mt-0.5">
                     <span className="text-white text-xs font-bold">✓</span>
                   </div>
-                  <p className="text-gray-300 font-medium text-sm leading-relaxed">{cert}</p>
+                  <p className="text-gray-700 dark:text-gray-300 font-medium text-sm leading-relaxed">{cert}</p>
                 </motion.div>
               ))}
             </div>
