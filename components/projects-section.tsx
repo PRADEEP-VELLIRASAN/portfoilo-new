@@ -42,15 +42,15 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 backdrop-blur-md mb-6">
             <Sparkles className="w-4 h-4 text-purple-400" />
-            <span className="text-sm font-medium text-gray-300">My work</span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">My work</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Featured{" "}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Innovative solutions showcasing technical skills and problem-solving abilities
           </p>
         </motion.div>
@@ -88,10 +88,10 @@ export default function ProjectsSection() {
 
               {/* Project content */}
               <div className="p-8 relative z-20">
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                   {project.description}
                 </p>
 
@@ -100,7 +100,7 @@ export default function ProjectsSection() {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-medium hover:bg-white/10 transition-colors"
+                      className="px-3 py-1.5 rounded-full bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-700 dark:text-gray-300 text-xs font-medium hover:bg-gray-300 dark:hover:bg-white/10 transition-colors"
                     >
                       {tech}
                     </span>
