@@ -52,9 +52,13 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
   }, [])
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href) as HTMLElement | null
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      const header = document.querySelector('nav') as HTMLElement | null
+      const headerHeight = header ? header.offsetHeight : 64
+      const elementTop = element.getBoundingClientRect().top + window.scrollY
+      const offset = elementTop - headerHeight - 16
+      window.scrollTo({ top: Math.max(0, offset), behavior: 'smooth' })
     }
     setIsMenuOpen(false)
   }
@@ -182,7 +186,7 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -100, opacity: 0 }}
               transition={{ type: 'spring', stiffness: 400, damping: 40 }}
-              className="absolute top-14 sm:top-16 left-4 right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 lg:hidden"
+              className="fixed top-14 sm:top-16 left-4 right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 lg:hidden"
             >
               <div className="max-h-96 overflow-y-auto">
                 <div className="py-2">
