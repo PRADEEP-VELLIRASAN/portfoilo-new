@@ -59,15 +59,15 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 backdrop-blur-md mb-6">
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-medium text-gray-300">Let's connect</span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Let's connect</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Get In{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Ready to collaborate on exciting projects? Let's create something amazing together
           </p>
         </motion.div>
@@ -92,8 +92,8 @@ export default function ContactSection() {
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${info.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <info.icon className="w-7 h-7 text-white" />
                 </div>
-                <div className="text-sm text-gray-400 mb-2">{info.title}</div>
-                <div className="text-white font-semibold text-lg">{info.value}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">{info.title}</div>
+                <div className="text-gray-900 dark:text-white font-semibold text-lg">{info.value}</div>
               </div>
 
               {/* Arrow indicator */}
@@ -115,7 +115,7 @@ export default function ContactSection() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
 
           <div className="relative z-10">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">Connect on Social Media</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Connect on Social Media</h3>
             
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {socialLinks.map((social, index) => (
@@ -135,7 +135,7 @@ export default function ContactSection() {
                     <social.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-white font-semibold">{social.name}</div>
+                    <div className="text-gray-900 dark:text-white font-semibold">{social.name}</div>
                     <div className="text-gray-400 text-sm">{social.handle}</div>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
