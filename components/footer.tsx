@@ -32,7 +32,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-black/50 backdrop-blur-xl border-t border-white/10">
+    <footer className="relative bg-gray-100 dark:bg-black/50 border-t border-gray-300 dark:border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand section */}
@@ -41,9 +41,9 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-violet-500 to-cyan-500 flex items-center justify-center">
                 <Code2 className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Angeshkumar P</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Angeshkumar P</h3>
             </div>
-            <p className="text-gray-400 mb-8 max-w-md leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-md leading-relaxed">
               Computer Engineering student passionate about creating innovative solutions with modern technologies.
               Specializing in AI, IoT, and web development.
             </p>
@@ -56,10 +56,10 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 flex items-center justify-center transition-all group"
+                  className="w-10 h-10 rounded-xl bg-gray-200 dark:bg-white/5 border border-gray-400 dark:border-white/10 hover:bg-gray-300 dark:hover:bg-white/10 hover:border-gray-500 dark:hover:border-white/20 flex items-center justify-center transition-all group"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                  <social.icon className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
                 </motion.a>
               ))}
             </div>
@@ -67,15 +67,15 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold text-white mb-6">Quick Links</h4>
+            <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-gray-400 hover:text-white transition-colors text-left group flex items-center gap-2"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-left group flex items-center gap-2"
                   >
-                    <span className="w-0 h-px bg-white/50 group-hover:w-4 transition-all duration-300" />
+                    <span className="w-0 h-px bg-gray-400 dark:bg-white/50 group-hover:w-4 transition-all duration-300" />
                     {link.name}
                   </button>
                 </li>
@@ -85,8 +85,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-bold text-white mb-6">Contact</h4>
-            <div className="space-y-3 text-gray-400 text-sm">
+            <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Contact</h4>
+            <div className="space-y-3 text-gray-600 dark:text-gray-400 text-sm">
               <p>📧 angeshkumar499@gmail.com</p>
               <p>📱 +91 9345106980</p>
               <p>📍 Pachampalayam, Tirupur</p>
@@ -96,11 +96,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom section */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm text-center md:text-left">
+        <div className="border-t border-gray-300 dark:border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-600 dark:text-gray-400 text-sm text-center md:text-left">
             © 2025 Angeshkumar P. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-gray-400 text-sm">
+          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
             <span>Built with</span>
             <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
             <span>and</span>
