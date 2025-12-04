@@ -57,15 +57,15 @@ export default function EducationSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 backdrop-blur-md mb-6">
             <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-sm font-medium text-gray-300">Academic background</span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Academic background</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Educational{" "}
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Journey</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             A strong academic foundation in technology and computer science
           </p>
         </motion.div>
@@ -119,11 +119,11 @@ export default function EducationSection() {
                       </div>
 
                       {/* Content */}
-                      <h3 className="text-2xl font-bold text-white mb-2">{edu.degree}</h3>
-                      <p className="text-gray-400 font-medium mb-4">{edu.field}</p>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{edu.degree}</h3>
+                      <p className="text-gray-600 dark:text-gray-400 font-medium mb-4">{edu.field}</p>
                       
                       <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-gray-400">
+                        <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                           <MapPin className="w-4 h-4 text-cyan-400" />
                           <span className="text-sm">{edu.institution}</span>
                         </div>
