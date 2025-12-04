@@ -45,14 +45,14 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 backdrop-blur-md mb-6">
             <Sparkles className="w-4 h-4 text-violet-400" />
-            <span className="text-sm font-medium text-gray-300">Get to know me</span>
+            <span className="text-sm font-medium text-gray-600 dark:text-gray-300">Get to know me</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             About <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">Me</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             A passionate developer with a strong foundation in computer technology
           </p>
         </motion.div>
@@ -74,9 +74,9 @@ export default function AboutSection() {
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center">
                     <Code2 className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Career Objective</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Career Objective</h3>
                 </div>
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
                   Highly motivated and detail-oriented student seeking an internship to apply academic knowledge in real-world projects.
                   Skilled in problem-solving, teamwork, and adapting to new technologies. Eager to gain hands-on experience and contribute
                   to innovative solutions in a professional environment.
@@ -95,7 +95,7 @@ export default function AboutSection() {
                   <div className="text-4xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent mb-2">
                     4+
                   </div>
-                  <div className="text-gray-400 text-sm font-medium">Years in Tech</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-sm font-medium">Years in Tech</div>
                 </div>
               </motion.div>
               
@@ -108,7 +108,7 @@ export default function AboutSection() {
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">
                     5+
                   </div>
-                  <div className="text-gray-400 text-sm font-medium">Projects Done</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-sm font-medium">Projects Done</div>
                 </div>
               </motion.div>
             </div>
@@ -137,8 +137,8 @@ export default function AboutSection() {
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${hobby.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <hobby.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">{hobby.title}</h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">{hobby.description}</p>
+                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{hobby.title}</h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{hobby.description}</p>
                 </div>
               </motion.div>
             ))}
