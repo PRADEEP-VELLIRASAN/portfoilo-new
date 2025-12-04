@@ -43,17 +43,17 @@ export default function AchievementsSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 backdrop-blur-md mb-6">
             <Sparkles className="w-4 h-4 text-pink-400" />
-            <span className="text-sm font-medium text-gray-300">Experience & recognition</span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Experience & recognition</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Internships &{" "}
             <span className="bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
               Achievements
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Practical experience through internships and technical events
           </p>
         </motion.div>
@@ -80,16 +80,16 @@ export default function AchievementsSection() {
                 </div>
 
                 {/* Organization badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-4">
-                  <Award className="w-3 h-3 text-gray-400" />
-                  <span className="text-xs font-medium text-gray-400">{achievement.organization}</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 mb-4">
+                  <Award className="w-3 h-3 text-gray-600 dark:text-gray-400" />
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-400">{achievement.organization}</span>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-rose-400 group-hover:bg-clip-text transition-all duration-300">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-rose-400 group-hover:bg-clip-text transition-all duration-300">
                   {achievement.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                   {achievement.description}
                 </p>
               </div>
