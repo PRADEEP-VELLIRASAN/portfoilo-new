@@ -31,13 +31,13 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 hover:bg-white/10 transition-colors cursor-default"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 dark:border-white/10 backdrop-blur-md mb-8 hover:bg-white/10 dark:hover:bg-white/10 transition-colors cursor-default"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              <span className="text-sm font-medium text-gray-300">Available for Internship</span>
+              <span className="text-sm font-medium text-gray-600 dark:text-gray-300">Available for Internship</span>
             </motion.div>
 
             {/* Main heading */}
@@ -46,7 +46,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-900 dark:text-white"
               >
                 Angeshkumar
               </motion.h1>
@@ -57,9 +57,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-xl sm:text-2xl text-gray-400 mb-8 font-light"
+              className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mb-8 font-light"
             >
-              Computer Engineering Student & <span className="text-white font-medium">Full Stack Developer</span>
+              Computer Engineering Student & <span className="text-gray-900 dark:text-white font-medium">Full Stack Developer</span>
             </motion.p>
 
             {/* Description */}
@@ -82,7 +82,7 @@ export default function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-white text-black rounded-full font-semibold flex items-center justify-center gap-2 overflow-hidden"
+                className="group relative px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full font-semibold flex items-center justify-center gap-2 overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Download Resume <Download className="w-4 h-4" />
@@ -94,7 +94,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-                className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-white/10 transition-all backdrop-blur-sm"
+                className="px-8 py-4 bg-gray-100 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-900 dark:text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-gray-200 dark:hover:bg-white/10 transition-all backdrop-blur-sm"
               >
                 View Projects <ArrowRight className="w-4 h-4" />
               </motion.button>
@@ -113,7 +113,7 @@ export default function HeroSection() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   <social.icon className="w-6 h-6" />
                 </a>
@@ -175,7 +175,7 @@ export default function HeroSection() {
                 className="absolute bottom-10 left-0 z-20 bg-black/50 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-xl"
               >
                 <div className="text-xs font-mono text-gray-400 mb-1">Current Focus</div>
-                <div className="text-sm font-bold text-white">AI & IoT Security</div>
+                <div className="text-sm font-bold text-gray-900 dark:text-white">AI & IoT Security</div>
               </motion.div>
             </div>
           </motion.div>
