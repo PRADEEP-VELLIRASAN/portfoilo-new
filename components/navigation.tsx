@@ -43,6 +43,8 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
           }
         }
       }
+    }
+
     window.addEventListener("scroll", handleScroll)
     handleScroll() // Call once to set initial state
 
@@ -56,6 +58,18 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
     }
     setIsMenuOpen(false)
   }
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isMenuOpen])
 
   return (
     <>
@@ -136,6 +150,8 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+                aria-expanded={isMenuOpen}
                 className="lg:hidden p-2 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
               >
                 {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -203,4 +219,4 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
       </AnimatePresence>
     </>
   )
-
+}
